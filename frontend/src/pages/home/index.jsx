@@ -1,4 +1,4 @@
-import { MessageSquareText } from "lucide-react";
+import { ArrowBigRightDash, MessageSquareText } from "lucide-react";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -23,9 +23,10 @@ const Home = () => {
             <button
               type="button"
               onClick={proceed}
-              className="btn btn-primary flex gap-2 self-center"
+              className="btn btn-primary flex gap-2 self-center h-[50px] w-fit px-5"
             >
-              <span>Get Started</span>
+              <ArrowBigRightDash />
+              <span className="text-lg">Get Started</span>
             </button>
           )}
           visualSize={270}

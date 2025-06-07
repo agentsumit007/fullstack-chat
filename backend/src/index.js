@@ -8,7 +8,11 @@ import { app, server } from "./services/socket.js";
 import express from "express";
 import path from "path";
 
-dotenv.config({path: "backend/.env"});
+if (process.env.NODE_ENV === "production") {
+  dotenv.config({ path: "backend/.env" });
+} else {
+  dotenv.config();
+}
 
 const __dirname = path.resolve();
 

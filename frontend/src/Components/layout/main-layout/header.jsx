@@ -42,7 +42,7 @@ const Header = () => {
     >
       <Link to={"/"} className="lg:ps-4 flex items-center gap-3 cursor-pointer">
         <RotatingVisual visualSize={50} />
-        <span className="text-lg font-bold hidden lg:block">Hello there!</span>
+        <span className="text-lg font-bold hidden lg:block">CHAT chat</span>
       </Link>
       <div className="hidden lg:flex grow justify-end px-2 ">
         <div className="flex items-stretch">
@@ -77,8 +77,12 @@ const Header = () => {
 
       <div className="flex lg:hidden grow justify-end ">
         <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className=" h-[40px] w-[40px]" >
-            <img className="rounded-full" src={profilePicture || assets.DP_PLACEHOLDER} alt="" />
+          <div tabIndex={0} role="button" className="h-[40px] w-[40px]">
+            <img
+              className="rounded-full  h-[40px] w-[40px] object-cover"
+              src={profilePicture || assets.DP_PLACEHOLDER}
+              alt=""
+            />
           </div>
           <ul
             tabIndex={0}
