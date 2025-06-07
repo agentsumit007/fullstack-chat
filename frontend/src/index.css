@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all, light --default, night --prefersdark;
+  root: ":root";
+}
+:root {
+  @apply bg-base-200;
+}
+
+.fieldset {
+  @apply relative mb-2;
+}
+
+.fieldset .fieldset-label {
+  @apply absolute -bottom-4;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-rev {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 15s linear infinite;
+}
+.rotate-rev {
+  animation: rotate-rev 15s linear infinite;
+}
+
+.messages-screen-cards {
+  @apply lg:rounded-xl p-2 bg-base-100;
+}
