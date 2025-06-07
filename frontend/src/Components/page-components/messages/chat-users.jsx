@@ -39,7 +39,7 @@ const ChatUsers = () => {
 
   return (
     <div
-      className={` h-[calc(100dvh-74px)] lg:h-[calc(100dvh-98px)] relative messages-screen-cards flex flex-col gap-4 w-full lg:w-1/3 `}
+      className={`!bg-base-200 h-[calc(100dvh-74px)] lg:h-[calc(100dvh-98px)] relative messages-screen-cards flex flex-col gap-4 w-full lg:w-1/3 `}
     >
       {data?.data?.chats.map((chat, i) => {
         let displayUser = chat?.users?.find((v) => v?._id !== myId);

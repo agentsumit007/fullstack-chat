@@ -1,10 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: all, light --default, night --prefersdark;
+  themes: all;
   root: ":root";
 }
 :root {
-  @apply bg-base-200;
+  /* @apply !bg-base-100; */
 }
 
 .fieldset {

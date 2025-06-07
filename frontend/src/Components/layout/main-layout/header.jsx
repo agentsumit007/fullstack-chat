@@ -7,6 +7,7 @@ import { LogOut } from "lucide-react";
 import { assets } from "../../../assets/assets-path";
 import Modal from "../../tools/Modal";
 import EditProfile from "../../page-components/profile/edit-profile";
+import ThemeChanger from "../../tools/ThemeChanger";
 
 const Header = () => {
   const { isLoggedIn, profilePicture } = useSelector((state) => state.auth);
@@ -36,16 +37,16 @@ const Header = () => {
 
   return (
     <div
-      className={`navbar bg-base-100 mb-2 lg:mb-4 ${
+      className={`!bg-base-200 navbar mb-2 lg:mb-4 ${
         hideHeader ? "hidden lg:flex" : "flex"
       }`}
     >
       <Link to={"/"} className="lg:ps-4 flex items-center gap-3 cursor-pointer">
         <RotatingVisual visualSize={50} />
-        <span className="text-lg font-bold hidden lg:block">CHAT chat</span>
+        <span className="text-lg font-bold hidden lg:block">Chat 'em!</span>
       </Link>
       <div className="hidden lg:flex grow justify-end px-2 ">
-        <div className="flex items-stretch">
+        <div className="flex items-center">
           <a
             className="btn btn-ghost rounded-field"
             onClick={() =>
@@ -55,13 +56,15 @@ const Header = () => {
               })
             }
           >
-            {" "}
             <img
               className="h-[40px] w-[40px] rounded-full"
               src={profilePicture || assets.DP_PLACEHOLDER}
               alt=""
             />
           </a>
+          <div className="px-2">
+            <ThemeChanger />
+          </div>
           <a
             className="btn btn-ghost rounded-field flex items-center gap-3"
             onClick={(e) => handleLogout()}
@@ -72,7 +75,7 @@ const Header = () => {
         </div>
       </div>
       <a className="text-lg font-bold  lg:hidden w-full text-center">
-        Hello there!
+        Chat 'em!
       </a>
 
       <div className="flex lg:hidden grow justify-end ">

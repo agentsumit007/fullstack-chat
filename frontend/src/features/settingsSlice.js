@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { themes } from "../utils/utils";
 
 export const settingsSlice = createSlice({
   name: "setting",
   initialState: {
     visibleScreen: "users",
     onlineUsers: [],
+    theme: localStorage.getItem("theme-var") || themes[1],
   },
   reducers: {
     setVisibleScreen: (state, action) => {
@@ -13,9 +15,13 @@ export const settingsSlice = createSlice({
     setOnlineUsers: (state, action) => {
       state.onlineUsers = action.payload;
     },
+    setTheme: (state, action) => {
+      state.theme = action.payload;
+    },
   },
 });
 
-export const { setVisibleScreen, setOnlineUsers } = settingsSlice.actions;
+export const { setVisibleScreen, setOnlineUsers, setTheme } =
+  settingsSlice.actions;
 
 export default settingsSlice.reducer;

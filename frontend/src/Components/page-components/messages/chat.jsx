@@ -9,7 +9,7 @@ const Chat = () => {
 
   return (
     <div
-      className={`h-[calc(100dvh)] lg:h-[calc(100dvh-98px)] messages-screen-cards w-full lg:w-2/3`}
+      className={`!bg-base-200 h-[calc(100dvh)] lg:h-[calc(100dvh-98px)] messages-screen-cards w-full lg:w-2/3`}
     >
       {selectedChat?._id ? (
         <div className="h-full flex flex-col justify-between">

@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import HeroSection from "../../Components/page-components/home/hero-section";
+import ThemeChanger from "../../Components/tools/ThemeChanger";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -16,8 +17,11 @@ const Home = () => {
     // }
   };
   return (
-    <div>
-      <div className="hero bg-base-200 min-h-screen">
+    <div className="bg-base-200">
+      <div className="absolute end-5 top-5">
+        <ThemeChanger />
+      </div>
+      <div className="hero  min-h-screen">
         <HeroSection
           ProceedButton={() => (
             <button
