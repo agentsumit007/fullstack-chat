@@ -7,13 +7,10 @@ import { connectDB } from "./services/db.js";
 import { app, server } from "./services/socket.js";
 import express from "express";
 import path from "path";
-import { fileURLToPath } from "url";
 
-dotenv.config();
+dotenv.config({path: "backend/.env"});
 
-// Setup __dirname for ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.resolve();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/chat", chatRoutes);
@@ -22,7 +19,7 @@ app.use("/api/storage", storageRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Path to frontend build
-  const distPath = path.join(__dirname, "../frontend/dist");
+  const distPath = path.join(__dirname, "/frontend/dist");
 
   // Serve static files
   app.use(express.static(distPath));
