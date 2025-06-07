@@ -19,7 +19,7 @@ app.use("/api/storage", storageRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Path to frontend build
-  const distPath = path.join(__dirname, "/frontend/dist");
+  const distPath = path.join(__dirname, "../frontend/dist");
 
   // Serve static files
   app.use(express.static(distPath));
