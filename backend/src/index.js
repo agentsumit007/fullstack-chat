@@ -5,6 +5,7 @@ import storageRoutes from "./routes/storage.route.js";
 import dotenv from "dotenv";
 import { connectDB } from "./services/db.js";
 import { app, server } from "./services/socket.js";
+import express from "express";
 import path from "path";
 
 const __dirname = path.resolve();
