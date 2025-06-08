@@ -19,9 +19,9 @@ const ChatUsersSkeletons = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center w-60">
-          <p>
+          <div>
             <div className="skeleton h-4 w-full"></div>
-          </p>
+          </div>
         </div>
       </div>
       <div
@@ -39,9 +39,9 @@ const ChatUsersSkeletons = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center w-60">
-          <p>
+          <div>
             <div className="skeleton h-4 w-full"></div>
-          </p>
+          </div>
         </div>
       </div>
       <div
@@ -59,9 +59,9 @@ const ChatUsersSkeletons = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center w-60">
-          <p>
+          <div>
             <div className="skeleton h-4 w-full"></div>
-          </p>
+          </div>
         </div>
       </div>
     </>

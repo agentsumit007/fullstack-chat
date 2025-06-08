@@ -10,42 +10,40 @@ import { themes } from "../config";
 const App = () => {
   const { theme } = useSelector((state) => state.settings);
   return (
-    <div data-theme={theme || localStorage.getItem("theme-var") || themes[0]}>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <MainLayout>
-              <Home />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/auth/login"
-          element={
-            <MainLayout>
-              <Login />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/auth/sign-up"
-          element={
-            <MainLayout>
-              <Signup />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/messages"
-          element={
-            <MainLayout hasHeader authGuard>
-              <Messages />
-            </MainLayout>
-          }
-        />
-      </Routes>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <MainLayout>
+            <Home />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/auth/login"
+        element={
+          <MainLayout>
+            <Login />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/auth/sign-up"
+        element={
+          <MainLayout>
+            <Signup />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/messages"
+        element={
+          <MainLayout hasHeader authGuard>
+            <Messages />
+          </MainLayout>
+        }
+      />
+    </Routes>
   );
 };
 

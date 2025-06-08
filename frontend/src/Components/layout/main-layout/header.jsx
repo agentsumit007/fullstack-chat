@@ -107,6 +107,9 @@ const Header = () => {
             <li onClick={(e) => handleLogout()}>
               <a>Logout</a>
             </li>
+            <li className="flex justify-center w-full">
+              <ThemeChanger />
+            </li>
           </ul>
         </div>
       </div>

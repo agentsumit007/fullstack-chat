@@ -3,9 +3,8 @@
   themes: all;
   root: ":root";
 }
-:root {
-  /* @apply !bg-base-100; */
-}
+
+
 
 .fieldset {
   @apply relative mb-2;

@@ -2,18 +2,26 @@ import { MoonStar, Sun } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../../../features/settingsSlice";
 import { themes } from "../../../../config";
+import { useEffect } from "react";
 
 const ThemeChanger = () => {
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.settings);
+  useEffect(() => {
+    const currTheme = localStorage.getItem("theme-var") || themes[1];
+    setThemeValue(currTheme);
+  }, []);
   const handleChangeTheme = (type) => {
     if (type) {
-      dispatch(setTheme(themes[1]));
-      localStorage.setItem("theme-var", themes[1]);
+      setThemeValue(themes[1]);
     } else {
-      dispatch(setTheme(themes[0]));
-      localStorage.setItem("theme-var", themes[0]);
+      setThemeValue(themes[0]);
     }
+  };
+  const setThemeValue = (val) => {
+    dispatch(setTheme(val));
+    localStorage.setItem("theme-var", val);
+    document.documentElement.setAttribute("data-theme", val);
   };
   return (
     <div>
