@@ -1,7 +1,7 @@
 import { MoonStar, Sun } from "lucide-react";
-import { themes } from "../../../utils/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../../../features/settingsSlice";
+import { themes } from "../../../../config";
 
 const ThemeChanger = () => {
   const dispatch = useDispatch();

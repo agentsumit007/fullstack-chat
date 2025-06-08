@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { themes } from "../utils/utils";
+import { themes } from "../../config";
 
 export const settingsSlice = createSlice({
   name: "setting",

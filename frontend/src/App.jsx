@@ -6,7 +6,7 @@ import MainLayout from "./Components/layout/main-layout";
 import Messages from "./pages/messages";
 import Signup from "./pages/auth/signup";
 import { useSelector } from "react-redux";
-import { themes } from "./utils/utils";
+import { themes } from "../config";
 const App = () => {
   const { theme } = useSelector((state) => state.settings);
   return (

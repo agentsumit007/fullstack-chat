@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getChatMessages } from "../../../utils/api-functions";
 import { assets } from "../../../assets/assets-path";
 import { useChatSocket } from "../../../utils/hooks";
+import ChatMessagesSkeletons from "../skeletons/chat-messages-skeleton";
 
 const ChatMessages = () => {
   const latestMessageRef = useRef(0);
@@ -18,8 +19,13 @@ const ChatMessages = () => {
   });
 
   useEffect(() => {
-    latestMessageRef?.current?.scrollIntoView({ behaviour: "smooth" });
+    if (latestMessageRef?.current)
+      latestMessageRef?.current?.scrollIntoView({ behaviour: "smooth" });
   }, [data]);
+
+  if (isLoading) {
+    return <ChatMessagesSkeletons />;
+  }
 
   return (
     <div className="h-full overflow-y-auto gap-4 ">
@@ -27,9 +33,6 @@ const ChatMessages = () => {
         const pos = message?.sender?._id === myId ? "chat-end" : "chat-start";
 
         return (
-          //   <div key={message?._id} className={`chat chat-${pos}`}>
-          //     <div>{message?.content}</div>
-          //   </div>
           <div key={message?._id} className={` h-[70px] chat ${pos}`}>
             <div className="chat-image avatar">
               <div className="w-10 rounded-full">
@@ -39,13 +42,7 @@ const ChatMessages = () => {
                 />
               </div>
             </div>
-            {/* <div className="chat-header">
-                Obi-Wan Kenobi
-                <time className="text-xs opacity-50">12:45</time>
-              </div> */}
-
             <div className="chat-bubble">{message?.content}</div>
-            {/* <div className="chat-footer opacity-50">Delivered</div> */}
           </div>
         );
       })}
