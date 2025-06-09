@@ -18,12 +18,12 @@ const corsConfig = {
 const app = express();
 const server = http.createServer(app);
 
-const io = new Server(server);
-app.use(cors());
+// const io = new Server(server);
+// app.use(cors());
 
-// const io = new Server(server, {
-//   cors: corsConfig,
-// });
+const io = new Server(server, {
+  cors: corsConfig,
+});
 app.use(cors(corsConfig));
 
 app.use(express.json());
