@@ -10,6 +10,7 @@ import { Warehouse } from "lucide-react";
 import RotatingVisual from "../../../Components/page-components/home/rotating-visual";
 import Fieldset from "../../../Components/tools/fieldset";
 import { svgIcons } from "../../../utils/svgIcons";
+import ThemeChanger from "../../../Components/tools/ThemeChanger";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -19,8 +20,8 @@ const Login = () => {
   );
 
   useEffect(() => {
-    if(isLoggedIn) {
-      navigate('/messages')
+    if (isLoggedIn) {
+      navigate("/messages");
     }
     if (success) {
       toast.success(message);
@@ -58,6 +59,9 @@ const Login = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 bg-base-100">
+      <div className="absolute end-5 top-5">
+        <ThemeChanger />
+      </div>
       <div className="hidden lg:flex items-center justify-center flex-col  hero bg-base-200 min-h-screen">
         <RotatingVisual visualSize={500} />
       </div>
