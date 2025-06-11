@@ -14,7 +14,7 @@ const App = () => {
       <Route
         path="/"
         element={
-          <MainLayout>
+          <MainLayout hasFooter>
             <Home />
           </MainLayout>
         }
